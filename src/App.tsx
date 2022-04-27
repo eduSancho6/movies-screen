@@ -3,13 +3,14 @@ import api_key from './api_key';
 
 interface MovieInterface {
   original_title: string;
-  backdrop_path: string;
+  backdrop_path?: string;
+  poster_path?: string;
   overview?: string;
 }
 
 function App() {
   const [search, setSearch] = useState<string>('the lord');
-  const [allMovies, setAllMovies] = useState<MovieInterface>();
+  const [allMovies, setAllMovies] = useState<MovieInterface[]>();
 
   const findMovies = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,6 +20,7 @@ function App() {
       );
       if (res.ok) {
         const body = await res.json();
+        setAllMovies(body.results);
         console.log('List of Movies', body.results);
       }
     } catch (error) {
@@ -28,8 +30,8 @@ function App() {
 
   return (
     <main className='movies-screen_container'>
-      <header>
-        <h2 className='header_title'> ¿Qúe vemos hoy? </h2>
+      <section className='search-engine_container'>
+        <h2 className='header_title'>¿Qué vemos hoy?</h2>
         <form className='search_form' onSubmit={findMovies}>
           <input
             type='text'
@@ -38,10 +40,30 @@ function App() {
             className='search_input'
           ></input>
           <button type='submit' className='search_button'>
-            Search
+            Buscar
           </button>
         </form>
-      </header>
+      </section>
+      <section className='movies-results_container'>
+        {allMovies
+          ? allMovies.map((movie, index) => {
+              console.log('movie', movie);
+              return (
+                <article className='movie_card' key={index}>
+                  <img
+                    src={
+                      movie.poster_path
+                        ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+                        : `https://image.tmdb.org/t/p/w300${movie.backdrop_path}`
+                    }
+                    alt={`${movie.original_title}`}
+                  ></img>
+                  <h2> {movie.original_title} </h2>
+                </article>
+              );
+            })
+          : ''}
+      </section>
     </main>
   );
 }
