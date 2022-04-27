@@ -3,6 +3,7 @@ import API_KEY from './api_key';
 import ListOfMovies from './components/ListOfMovies';
 import SearchEngine from './components/SearchEngine';
 import MovieInterface from './model';
+import axios from 'axios';
 
 function App() {
   const [search, setSearch] = useState<string>('the lord');
@@ -15,18 +16,21 @@ function App() {
 
   const searchMovie = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const controller = new AbortController();
+
     try {
-      const res = await fetch(
+      const { data } = await axios.get(
         `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`
       );
-      if (res.ok) {
-        const body = await res.json();
-        setAllMovies(body.results);
-        console.log('List of Movies', body.results);
-      }
+      setAllMovies(data.results);
+      console.log('Info', data.results);
     } catch (error) {
-      console.error(error);
+      if (axios.isAxiosError(error)) {
+        console.error(error);
+      }
     }
+    controller.abort();
   };
 
   return (
