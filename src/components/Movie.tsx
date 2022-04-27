@@ -1,6 +1,6 @@
 import MovieInterface from '../model';
 
-const Movie = ({
+const Movie: React.FC<MovieInterface> = ({
   original_title,
   poster_path,
   backdrop_path,
