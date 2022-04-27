@@ -9,9 +9,10 @@ const ListOfMovies: React.FC<AllMovies> = ({ allMovies }: AllMovies) => {
   return (
     <section className='movies-results_container'>
       {allMovies
-        ? allMovies.map((movie) => {
+        ? allMovies.map((movie, key) => {
             return (
               <Movie
+                key={key}
                 original_title={movie.original_title}
                 id={movie.id}
                 poster_path={movie.poster_path}
