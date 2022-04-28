@@ -3,10 +3,14 @@
 :root {
   /* Fonts */
   --main-font: 'Raleway', sans-serif;
+
   /* Weights */
   --thin: 200;
   --medium: 400;
   --bold: 700;
+
+  /* Colors */
+  --logo: #64c410;
 }
 
 *,
@@ -15,6 +19,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+li {
+  list-style: none;
 }
 
 .movies-screen_container {
