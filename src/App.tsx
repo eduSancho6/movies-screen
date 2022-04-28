@@ -4,6 +4,7 @@ import ListOfMovies from './components/ListOfMovies';
 import SearchEngine from './components/SearchEngine';
 import MovieInterface from './model';
 import axios from 'axios';
+import Header from './components/ui/Header/Header';
 
 function App() {
   const [search, setSearch] = useState<string>('the lord');
@@ -34,14 +35,15 @@ function App() {
   };
 
   return (
-    <main className='movies-screen_container'>
+    <body className='movies-screen_container'>
+      <Header />
       <SearchEngine
         search={search}
         setSearch={setSearch}
         searchMovie={searchMovie}
       />
       <ListOfMovies allMovies={allMovies} />
-    </main>
+    </body>
   );
 }
 
