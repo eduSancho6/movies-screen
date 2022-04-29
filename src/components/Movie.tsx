@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router';
 import MovieInterface from '../model';
 
 const Movie: React.FC<MovieInterface> = ({
@@ -6,8 +7,14 @@ const Movie: React.FC<MovieInterface> = ({
   backdrop_path,
   id,
 }: MovieInterface) => {
+  let navigate = useNavigate();
+
   return (
-    <article className='movie_card' key={id}>
+    <article
+      className='movie_card'
+      key={id}
+      onClick={(e) => navigate(`/movie/${id}`)}
+    >
       <img
         src={
           poster_path

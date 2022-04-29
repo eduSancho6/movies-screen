@@ -25,7 +25,7 @@ li {
   list-style: none;
 }
 
-.movies-screen_container {
+#movies-screen_container {
   font-family: var(--main-font);
 
   font-size: 1rem;
@@ -47,6 +47,7 @@ li {
 }
 .search_form {
   position: relative;
+
   font-size: 2em;
   max-width: 600px;
   margin-inline: auto;
@@ -54,13 +55,16 @@ li {
 
 .search_form::before {
   content: '';
+
   position: absolute;
   bottom: 0rem;
   left: 50%;
   transform: translateX(-50%);
+
   height: 2px;
   width: 50%;
-  background-color: rgba(255, 255, 0, 0.359);
+
+  background-color: var(--logo);
 }
 
 .search_input {
@@ -122,17 +126,26 @@ li {
 }
 
 .movie_card {
-  box-shadow: 1px 1px 10px rgb(204, 204, 204);
   width: 300px;
-  overflow: hidden;
   margin: 0.5rem 1rem;
+
   background: #372b479f;
   color: #fef6ff;
+
   border-radius: 5px;
+  box-shadow: 1px 1px 10px rgb(204, 204, 204);
+
+  overflow: hidden;
+}
+
+.movie_card img {
+  cursor: pointer;
 }
 
 .movie_card h2 {
   font-weight: var(--medium);
   font-size: 1.2rem;
   padding: 0.2rem 0.3rem;
+
+  cursor: pointer;
 }
