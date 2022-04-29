@@ -1,15 +1,18 @@
 .logo {
   color: var(--logo);
 }
+
 .header_container {
   display: flex;
   margin-bottom: 2rem;
   max-width: 1100px;
   margin-inline: auto;
 }
+
 .nav_container {
   width: 100%;
 }
+
 .nav_items {
   height: 100%;
 
@@ -17,12 +20,15 @@
   justify-content: flex-end;
   align-items: center;
 }
+
 .nav_item {
   font-size: 1.1rem;
   font-weight: var(--bold);
   color: rgba(17, 17, 17, 0.648);
   cursor: pointer;
+  color: var(--logo);
 }
+
 .nav_item + .nav_item {
   margin-left: 1.2rem;
 }
