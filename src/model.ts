@@ -5,4 +5,5 @@ export default interface MovieInterface {
   poster_path?: string;
   overview?: string;
   vote_average?: number;
+  isFavorite?: boolean;
 }

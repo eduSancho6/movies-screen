@@ -13,16 +13,21 @@ export const favoriteMoviesSlice = createSlice({
   initialState,
   reducers: {
     addFavoriteMovie: (state, { payload }) => {
-      state.movies.push(payload);
+      state.movies.push({ ...payload, isFavorite: true });
+      const newState = state.movies.filter((mov) => mov.isFavorite);
+      state.movies = newState;
     },
     removeFavoriteMovie: (state, { payload }) => {
       state.movies = state.movies.filter((movie) => movie.id !== payload);
+      const newState = state.movies.filter((mov) => mov.isFavorite);
+      state.movies = newState;
     },
+    toggleFavoriteMovie: (state, { payload }) => {},
   },
 });
 
 export default favoriteMoviesSlice.reducer;
-export const { addFavoriteMovie, removeFavoriteMovie } =
+export const { addFavoriteMovie, removeFavoriteMovie, toggleFavoriteMovie } =
   favoriteMoviesSlice.actions;
 export const selectFavoritesMovies = (state: any) =>
   state.favoriteMovies.movies;
