@@ -1,5 +1,4 @@
 import MovieInterface from '../model';
-import movies from '../movies';
 import Movie from './Movie';
 
 interface AllMovies {
