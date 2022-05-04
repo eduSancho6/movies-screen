@@ -126,6 +126,8 @@ li {
 }
 
 .movie_card {
+  position: relative;
+
   width: 300px;
   margin: 0.5rem 1rem;
 
@@ -135,7 +137,9 @@ li {
   border-radius: 5px;
   box-shadow: 1px 1px 10px rgb(204, 204, 204);
 
-  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  /* overflow: hidden; */
 }
 
 .movie_card img {
@@ -148,4 +152,25 @@ li {
   padding: 0.2rem 0.3rem;
 
   cursor: pointer;
+}
+.movie_card_footer {
+  min-height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons_container {
+  padding: 0.7em;
+  font-size: 1.3rem;
+}
+
+.valoration_container {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+
+  padding: 0.6rem 0.4rem;
+  border: 1px solid green;
+  background: #111;
 }

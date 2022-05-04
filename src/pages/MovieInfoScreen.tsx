@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import API_KEY from '../api_key';
+import { API_KEY } from '../api_key';
 
 const URL: string = 'https://api.themoviedb.org/3';
 
@@ -45,8 +45,6 @@ const MovieInfoScreen: React.FC = () => {
   useEffect(() => {
     findMovieInfo(Number(id));
   }, []);
-
-  console.log('Movie', movie);
 
   return (
     <section className='movie-info-screen_container'>
