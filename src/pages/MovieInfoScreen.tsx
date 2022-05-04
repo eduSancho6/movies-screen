@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { API_KEY } from '../api_key';
 
 const URL: string = 'https://api.themoviedb.org/3';
@@ -22,7 +23,6 @@ const MovieInfoScreen: React.FC = () => {
     release_date: '2022-02-22',
   });
   const [loading, setLoading] = useState<boolean>(true);
-
   const { id } = useParams();
 
   const findMovieInfo = async (id: number) => {
@@ -52,15 +52,23 @@ const MovieInfoScreen: React.FC = () => {
         <h1>Loading</h1>
       ) : (
         <React.Fragment>
-          <button> Atrás </button>
-          <img
-            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-            alt={movie.original_title}
-          ></img>
-          <h1> {movie.original_title} </h1>
-          <p> {movie.overview} </p>
-          <span> {movie.vote_average} </span>
-          <p> {movie.release_date} </p>
+          <Link to='/' className='nav_item nav_comeback'>
+            {' '}
+            Atrás{' '}
+          </Link>
+          <div>
+            <img
+              src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+              alt={movie.original_title}
+            ></img>
+          </div>
+          <div>
+            <h1>Título original: {movie.original_title} </h1>
+            <h2> Descripción</h2>
+            <p> {movie.overview} </p>
+            <span>Puntuación: {movie.vote_average} </span>
+            <p>Fecha de estreno: {movie.release_date} </p>
+          </div>
           {/* Meter géneros */}
         </React.Fragment>
       )}
