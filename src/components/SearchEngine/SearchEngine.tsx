@@ -1,3 +1,4 @@
+import './searchEngine.css';
 interface searchInterface {
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
@@ -11,7 +12,11 @@ const SearchEngine: React.FC<searchInterface> = ({
 }: searchInterface) => {
   return (
     <section className='search-engine_container'>
-      <h2 className='header_title'>¿Qué vemos hoy?</h2>
+      <h2 className='header_title'>
+        {' '}
+        <span className='green'>¿</span> Qué vemos hoy{' '}
+        <span className='green'>?</span>
+      </h2>
       <form className='search_form' onSubmit={searchMovie}>
         <input
           type='text'

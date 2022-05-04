@@ -1,13 +1,11 @@
 import { useNavigate } from 'react-router';
-import MovieInterface from '../model';
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  removeFavoriteMovie,
-  selectFavoritesMovies,
-} from '../features/favoriteMovies/favoriteMoviesSlice';
-import { addFavoriteMovie } from '../features/favoriteMovies/favoriteMoviesSlice';
+import MovieInterface from '../../model';
+import { useDispatch } from 'react-redux';
+import { removeFavoriteMovie } from '../../features/favoriteMovies/favoriteMoviesSlice';
+import { addFavoriteMovie } from '../../features/favoriteMovies/favoriteMoviesSlice';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { useState } from 'react';
+import './movie.css';
 
 const Movie: React.FC<MovieInterface> = ({
   original_title,
@@ -15,14 +13,12 @@ const Movie: React.FC<MovieInterface> = ({
   backdrop_path,
   id,
   vote_average,
+  isFavorite,
 }: MovieInterface) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFav, setIsFav] = useState<any>(isFavorite);
 
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const favorites = useSelector(selectFavoritesMovies);
-
-  console.log('Favoritas', favorites);
 
   let movieEstructure: MovieInterface = {
     id,
@@ -30,6 +26,7 @@ const Movie: React.FC<MovieInterface> = ({
     poster_path,
     backdrop_path,
     vote_average,
+    isFavorite: true,
   };
 
   return (
@@ -46,11 +43,11 @@ const Movie: React.FC<MovieInterface> = ({
       <section className='movie_card_footer'>
         <h2> {original_title} </h2>
         <div className='icons_container'>
-          {isFavorite ? (
+          {isFav ? (
             <AiFillHeart
               onClick={() => {
                 dispatch(removeFavoriteMovie(id));
-                setIsFavorite(false);
+                setIsFav(false);
               }}
               style={{ cursor: 'pointer' }}
             />
@@ -58,7 +55,7 @@ const Movie: React.FC<MovieInterface> = ({
             <AiOutlineHeart
               onClick={() => {
                 dispatch(addFavoriteMovie(movieEstructure));
-                setIsFavorite(true);
+                setIsFav(true);
               }}
               style={{ cursor: 'pointer' }}
             />
