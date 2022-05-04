@@ -12,8 +12,8 @@ const FavoriteScreen = () => {
         Estas son tus películas favortias
       </h2>
 
-      {favorites.map((fav: MovieInterface) => {
-        return <ListOfMovies allMovies={favorites} />;
+      {favorites.map((fav: MovieInterface, key: number) => {
+        return <ListOfMovies allMovies={favorites} key={key} />;
       })}
     </section>
   );
