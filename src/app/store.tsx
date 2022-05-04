@@ -1,5 +1,8 @@
-import React from 'react';
+import { configureStore } from '@reduxjs/toolkit';
+import favoriteMoviesReducer from '../features/favoriteMovies/favoriteMoviesSlice';
 
-export const store = () => {
-  return <div>store</div>;
-};
+export default configureStore({
+  reducer: {
+    favoriteMovies: favoriteMoviesReducer,
+  },
+});
