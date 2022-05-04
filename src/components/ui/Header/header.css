@@ -27,6 +27,7 @@
   color: rgba(17, 17, 17, 0.648);
   cursor: pointer;
   color: var(--logo);
+  text-decoration: none;
 }
 
 .nav_item + .nav_item {
