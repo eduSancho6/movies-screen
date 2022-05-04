@@ -1,5 +1,5 @@
 import MovieInterface from '../model';
-import Movie from './Movie';
+import Movie from './Movie/Movie';
 
 interface AllMovies {
   allMovies: MovieInterface[];
