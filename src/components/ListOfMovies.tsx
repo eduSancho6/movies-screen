@@ -1,4 +1,5 @@
 import MovieInterface from '../model';
+import movies from '../movies';
 import Movie from './Movie';
 
 interface AllMovies {
@@ -18,6 +19,7 @@ const ListOfMovies: React.FC<AllMovies> = ({ allMovies }: AllMovies) => {
                 poster_path={movie.poster_path}
                 backdrop_path={movie.backdrop_path}
                 overview={movie.overview}
+                vote_average={movie.vote_average}
               />
             );
           })
