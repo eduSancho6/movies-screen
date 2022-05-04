@@ -1,14 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import ListOfMovies from '../components/ListOfMovies';
-import Movie from '../components/Movie';
-import { selectFavoritesMovies } from '../features/favoriteMovies/favoriteMoviesSlice';
 import MovieInterface from '../model';
+import { useSelector } from 'react-redux';
+import { selectFavoritesMovies } from '../features/favoriteMovies/favoriteMoviesSlice';
 
 const FavoriteScreen = () => {
   const favorites = useSelector(selectFavoritesMovies);
   return (
-    <section>
+    <section className='favorite-movies_container'>
+      <h2 className='favorite-movies_title'>
+        Estas son tus películas favortias
+      </h2>
+
       {favorites.map((fav: MovieInterface) => {
         return <ListOfMovies allMovies={favorites} />;
       })}

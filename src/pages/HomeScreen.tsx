@@ -36,7 +36,7 @@ const HomeScreen = () => {
   const getPopularMovies = async () => {
     try {
       const { data } = await axios.get(
-        ' https://api.themoviedb.org/3/movie/popular?api_key=8f781d70654b5a6f2fa69770d1d115a3&language=es-ES&page=1'
+        `${URL}/movie/popular?api_key=${API_KEY}&language=es-ES&page=1`
       );
       setAllMovies(data.results);
       console.log(data);
