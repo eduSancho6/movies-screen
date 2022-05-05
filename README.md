@@ -15,7 +15,12 @@ const URL = 'https://api.themoviedb.org/3';
 export { API_KEY, URL };
 
 
+Por otro lado, es importante no olvidar realizar la instalación de todas las dependencias con **npm install**.
+
+
 Tras añadir esta información, solo será necesario iniciar el repositorio con el **script**:
 
 **npm start**
 
+
+La peticiones a su servidor se han realizado a través de **Axios**, una API HTTP de Javascript que permite realizar promesas y comunicarnos con API REST. Para más información pulsa [aquí](https://axios-http.com/docs/intro).
