@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+**INTRODUCCIÓN**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este mini-proyecto es una app que utiliza una API llamada [themoviedb](https://www.themoviedb.org) para obtener desde películas, series, programas de televisión y más. En mi caso, se ha empleado para dedicar especial atención a películas, por el momento.
 
-## Available Scripts
+Para obtener la información y que las peticiones tengan una respuesta válida, es necesaria la clave correspondiente, se puede adquirir [aquí](https://developers.themoviedb.org/3/getting-started/introduction) siguiendo las instrucciones.
 
-In the project directory, you can run:
+A la hora de ocultar la clave, normalmente uso la dependecia dotenv y guardar en un **.env** dicha clave, sin embargo, debido a problemas inesperados, me vi obligado a crear un archivo normal y exportarlo a través de ahí. El archivo viene oculto gracias a añadirlo al **.gitignore**. El archivo se llama api_key.ts y su estructura viene en uno de ejemplo:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**ESTRUCTURA**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+const API_KEY = <meter aquí la clave>;
+const URL = 'https://api.themoviedb.org/3';
 
-### `npm test`
+export { API_KEY, URL };
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Por otro lado, es importante no olvidar realizar la instalación de todas las dependencias con **npm install**.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Tras añadir esta información, solo será necesario iniciar el repositorio con el **script**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**npm start**
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+La peticiones a su servidor se han realizado a través de **Axios**, una API HTTP de Javascript que permite realizar promesas y comunicarnos con API REST. Para más información pulsa [aquí](https://axios-http.com/docs/intro).
