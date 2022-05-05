@@ -25,6 +25,7 @@ const FavoriteScreen = () => {
               poster_path={fav.poster_path}
               overview={fav.overview}
               isFavorite={fav.isFavorite}
+              vote_average={fav.vote_average}
             />
           );
         })}

@@ -70,6 +70,7 @@ const HomeScreen = () => {
               poster_path={mov.poster_path}
               overview={mov.overview}
               isFavorite={mov.isFavorite}
+              vote_average={mov.vote_average}
             />
           );
         })}
