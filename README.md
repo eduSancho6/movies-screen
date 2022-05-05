@@ -24,3 +24,6 @@ Tras añadir esta información, solo será necesario iniciar el repositorio con 
 
 
 La peticiones a su servidor se han realizado a través de **Axios**, una API HTTP de Javascript que permite realizar promesas y comunicarnos con API REST. Para más información pulsa [aquí](https://axios-http.com/docs/intro).
+
+
+Por otro lado, he utilizado **Redux** para la gestión del estado correspondiente a las películas favoritas, para lo cuál he tenido que aprenderlo desde el principio. Esta parte ha sido bastante desafiante puesto que lo que aprendía o bien estaba "deprecado" o bien creía que necesitaba hacerlo de manera asíncrona y subí la dificultad sin venir a cuento. Ahora está implementado solo el Slice correspondiente a favoritos, pero a lo largo de estos días habrá tantos slices como estados globales que cambiar: la búsqueda, sus resultados, las películas más populares, ...etc. Gracias a esto, que aunque me haya costado una entrega retrasada y ha afectado al tiempo disponible para diseñar y realizar más implementaciones, ha servido mucho para una comprensión más profunda de Redux y lo que ocurre por detrás. 
