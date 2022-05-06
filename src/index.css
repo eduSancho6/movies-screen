@@ -49,14 +49,32 @@ li {
 */
 
 .movies-results_container {
+  position: relative;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-inline: auto;
   max-width: 90%;
   margin: 3rem auto 2rem;
+  padding: 5rem 0;
 }
-
+.buttons_container {
+  position: absolute;
+  top: -1rem;
+}
+.disabled {
+  opacity: 0.2;
+}
+.btn {
+  padding: 1rem 0.5rem;
+  font-size: 2rem;
+  background: var(--logo);
+  color: #ccc;
+  border: none;
+  border-radius: 4px;
+  margin: 0 1rem;
+  cursor: pointer;
+}
 /* 
 #######################
 ## MOVIE-INFO SCREEN ##
