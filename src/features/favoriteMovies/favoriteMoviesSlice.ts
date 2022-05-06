@@ -18,8 +18,7 @@ export const favoriteMoviesSlice = createSlice({
       state.movies = newState;
     },
     removeFavoriteMovie: (state, { payload }) => {
-      state.movies = state.movies.filter((movie) => movie.id !== payload);
-      const newState = state.movies.filter((mov) => mov.isFavorite);
+      const newState = state.movies.filter((movie) => movie.id !== payload);
       state.movies = newState;
     },
     toggleFavoriteMovie: (state, { payload }) => {},
