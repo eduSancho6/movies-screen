@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { API_KEY } from '../api_key';
+import { API_KEY } from '../../api_key';
 
 const URL: string = 'https://api.themoviedb.org/3';
 
