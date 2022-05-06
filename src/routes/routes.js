@@ -1,7 +1,6 @@
 import HomeScreen from '../pages/HomeScreen';
-import MovieInfoScreen from '../pages/MovieInfoScreen';
+import MovieInfoScreen from '../components/MovieInfoScreen/MovieInfoScreen';
 import FavoriteScreen from '../pages/FavoriteScreen';
-import React from 'react';
 
 const routes = [
   { name: 'home', path: '/', component: <HomeScreen /> },
