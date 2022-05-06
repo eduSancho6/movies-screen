@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { API_KEY, URL } from '../../api_key';
 import MovieInterface from '../../model';
-import { AllMovies } from '../../pages/HomeScreen';
+import { AllMovies } from '../../pages/SearchScreen';
 import Movie from '../Movie/Movie';
 
 const PopularMovies = ({ allMovies, setAllMovies }: AllMovies) => {
