@@ -75,19 +75,6 @@ li {
   margin: 0 1rem;
   cursor: pointer;
 }
-/* 
-#######################
-## MOVIE-INFO SCREEN ##
-#######################
-*/
-
-.movie-info-screen_container {
-  max-width: 80%;
-  margin-inline: auto;
-
-  display: flex;
-  justify-content: space-around;
-}
 
 /* 
 ######################

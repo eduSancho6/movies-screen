@@ -1,0 +1,43 @@
+.movie-info-screen_container {
+  position: relative;
+  max-width: 80%;
+  margin-inline: auto;
+  margin-top: 4rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.description_container {
+  width: 60%;
+  max-width: 600px;
+  margin: 0 1.4rem;
+}
+
+.nav_comeback {
+  position: absolute;
+  border: 3px solid var(--logo);
+  padding: 0.5rem;
+  display: inline-block;
+  left: -2rem;
+  border-radius: 43px;
+}
+
+.movie_original-title {
+  margin: 0 0 1rem 0;
+}
+.description {
+  margin: 1rem 0;
+}
+.description_container {
+  margin: 1rem;
+}
+.puntuation {
+  margin: 1rem 0;
+  font-weight: var(--bold);
+}
+.release_day {
+  margin: 1rem 0;
+  font-weight: var(--bold);
+}

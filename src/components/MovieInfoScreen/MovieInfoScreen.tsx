@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { API_KEY } from '../../api_key';
+import './movieInfo.css';
+import { IoArrowBackOutline } from 'react-icons/io5';
 
 const URL: string = 'https://api.themoviedb.org/3';
 
@@ -54,20 +56,25 @@ const MovieInfoScreen: React.FC = () => {
         <React.Fragment>
           <Link to='/' className='nav_item nav_comeback'>
             {' '}
+            <IoArrowBackOutline />
             Atrás{' '}
           </Link>
-          <div>
+          <div className='img_container'>
             <img
               src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
               alt={movie.original_title}
             ></img>
           </div>
-          <div>
-            <h1>Título original: {movie.original_title} </h1>
-            <h2> Descripción</h2>
-            <p> {movie.overview} </p>
-            <span>Puntuación: {movie.vote_average} </span>
-            <p>Fecha de estreno: {movie.release_date} </p>
+          <div className='description_container'>
+            <h1 className='movie_original-title'>{movie.original_title} </h1>
+            <h2 className='description_title'> Descripción</h2>
+            <p className='description'> {movie.overview} </p>
+            <span className='puntuation'>
+              Puntuación: {movie.vote_average}{' '}
+            </span>
+            <p className='release_day'>
+              Fecha de estreno: {movie.release_date}{' '}
+            </p>
           </div>
           {/* Meter géneros */}
         </React.Fragment>
