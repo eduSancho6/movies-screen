@@ -1,52 +1,13 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { API_KEY } from '../../api_key';
 import './movieInfo.css';
 import { IoArrowBackOutline } from 'react-icons/io5';
-
-const URL: string = 'https://api.themoviedb.org/3';
-
-interface MovieInterface {
-  original_title: string;
-  poster_path?: string;
-  overview?: string;
-  vote_average?: number;
-  release_date?: string;
-}
+import useFindMovieInfo from '../../hooks/useFindMovieInfo';
 
 const MovieInfoScreen: React.FC = () => {
-  const [movie, setMovie] = useState<MovieInterface>({
-    original_title: 'Waiting for the movie',
-    poster_path: '',
-    overview: 'Please, Wait until the movie is completely upload',
-    vote_average: 10,
-    release_date: '2022-02-22',
-  });
-  const [loading, setLoading] = useState<boolean>(true);
   const { id } = useParams();
-
-  const findMovieInfo = async (id: number) => {
-    try {
-      const res = await axios.get(`${URL}/movie/${id}`, {
-        params: {
-          api_key: API_KEY,
-        },
-        headers: {
-          'content-type': 'application/json',
-        },
-      });
-      setMovie(res.data);
-      setLoading(false);
-      console.log('A ver que pasa', res);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  useEffect(() => {
-    findMovieInfo(Number(id));
-  }, []);
+  const { movie, loading } = useFindMovieInfo(Number(id));
 
   return (
     <section className='movie-info-screen_container'>
