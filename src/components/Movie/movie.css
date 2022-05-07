@@ -14,7 +14,10 @@
   grid-template-rows: 1fr auto;
   /* overflow: hidden; */
 }
-
+.movie_card:hover {
+  transform: scale(105%);
+  transition: 0.3s;
+}
 .movie_card img {
   cursor: pointer;
 }
