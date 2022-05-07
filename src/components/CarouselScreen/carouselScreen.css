@@ -16,3 +16,7 @@
 .btn-right {
   right: 0;
 }
+.carousel_container {
+  display: flex;
+  transition: 0.5s;
+}
