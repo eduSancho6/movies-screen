@@ -2,8 +2,10 @@ import SearchScreen from '../pages/SearchScreen';
 import MovieInfoScreen from '../components/MovieInfoScreen/MovieInfoScreen';
 import FavoriteScreen from '../pages/FavoriteScreen';
 import PopularMoviesScreen from '../pages/PopularMoviesScreen';
+import CarouselScreen from '../components/CarouselScreen/CarouselScreen';
 
 const routes = [
+  { name: 'carousel', path: '/', component: <CarouselScreen /> },
   { name: 'home', path: '/', component: <PopularMoviesScreen /> },
   {
     name: 'searchResults',
