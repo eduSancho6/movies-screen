@@ -5,7 +5,6 @@ import { API_KEY, URL } from '../../api_key';
 import Movie from '../Movie/Movie';
 import MovieInterface from '../../model';
 import './carouselScreen.css';
-import SearchEngine from '../SearchEngine/SearchEngine';
 
 const CarouselScreen = () => {
   const [allMovies, setAllMovies] = useState<MovieInterface[]>([]);

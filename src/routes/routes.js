@@ -5,8 +5,8 @@ import PopularMoviesScreen from '../pages/PopularMoviesScreen';
 import CarouselScreen from '../components/CarouselScreen/CarouselScreen';
 
 const routes = [
-  { name: 'carousel', path: '/', component: <CarouselScreen /> },
   { name: 'home', path: '/', component: <PopularMoviesScreen /> },
+  { name: 'carousel', path: '/rated', component: <CarouselScreen /> },
   {
     name: 'searchResults',
     path: '/search/:query',
