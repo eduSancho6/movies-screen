@@ -4,7 +4,7 @@ import { useState } from 'react';
 interface searchInterface {
   search?: string;
   setSearch?: React.Dispatch<React.SetStateAction<string>>;
-  searchMovie: (e: React.FormEvent) => void;
+  searchMovie?: (e: React.FormEvent) => void;
 }
 
 const SearchEngine: React.FC<searchInterface> = ({
