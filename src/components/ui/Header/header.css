@@ -1,4 +1,7 @@
 .logo {
+  color: var(--white);
+}
+.logo .span_red {
   color: var(--logo);
 }
 
@@ -7,6 +10,9 @@
   margin-bottom: 2rem;
   max-width: 1100px;
   margin-inline: auto;
+}
+.header_title {
+  color: var(--white);
 }
 
 .nav_container {
@@ -22,12 +28,21 @@
 }
 
 .nav_item {
+  text-decoration: none;
+
+  color: var(--white);
+
   font-size: 1.1rem;
   font-weight: var(--bold);
-  color: rgba(17, 17, 17, 0.648);
+
   cursor: pointer;
+}
+.nav_item:hover,
+.nav_item :hover {
   color: var(--logo);
-  text-decoration: none;
+}
+.nav_item:hover .span_red {
+  color: var(--white);
 }
 
 .nav_item + .nav_item {

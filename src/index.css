@@ -10,7 +10,10 @@
   --bold: 700;
 
   /* Colors */
-  --logo: #64c410;
+  /* --logo: #64c410; */
+
+  --logo: rgb(190, 27, 27);
+  --white: #eee;
 }
 
 *,
@@ -19,6 +22,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+h3 {
+  color: var(--white);
 }
 
 li {
@@ -32,12 +38,14 @@ li {
   padding: 1rem 0.1rem;
   min-height: 100vh;
 
-  background: linear-gradient(
+  /*   background: linear-gradient(
     129deg,
     rgba(167, 80, 208, 1) 3%,
     rgba(142, 97, 230, 1) 30%,
     rgba(105, 76, 243, 1) 63%
-  );
+  ); */
+
+  background: #111;
 
   overflow-x: hidden;
 }
