@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import MovieInterface from '../model';
 import axios from 'axios';
 import SearchEngine from '../components/SearchEngine/SearchEngine';
 import { API_KEY, URL } from '../api_key';
-import Movie from '../components/Movie/Movie';
 import PopularMovies from '../components/PopularMovies/PopularMovies';
 
 export type AllMovies = {
@@ -41,7 +40,7 @@ const PopularMoviesScreen = () => {
         setSearch={setSearch}
         searchMovie={searchMovie}
       />
-      <PopularMovies allMovies={allMovies} setAllMovies={setAllMovies} />
+      <PopularMovies />
     </React.Fragment>
   );
 };

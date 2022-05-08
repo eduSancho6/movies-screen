@@ -1,8 +1,4 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { API_KEY, URL } from '../../api_key';
-import Movie from '../Movie/Movie';
+import React, { useState } from 'react';
 import MovieInterface from '../../model';
 import './carouselScreen.css';
 import Carousel from './Carousel';
