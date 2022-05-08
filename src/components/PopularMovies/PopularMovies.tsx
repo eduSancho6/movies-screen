@@ -1,9 +1,7 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { API_KEY, URL } from '../../api_key';
+import React, { useState } from 'react';
 import useGetPopularMovies from '../../hooks/useGetPopularMovies';
 import MovieInterface from '../../model';
-import { AllMovies } from '../../pages/SearchScreen';
+
 import Movie from '../Movie/Movie';
 
 const PopularMovies = () => {

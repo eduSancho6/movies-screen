@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MovieInterface from '../model';
 import { useSelector } from 'react-redux';
 import { selectFavoritesMovies } from '../features/favoriteMovies/favoriteMoviesSlice';
