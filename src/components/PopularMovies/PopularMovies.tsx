@@ -1,4 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  fetchAsyncPopularMovies,
+  selectAllPopularMovies,
+} from '../../features/allMovies/popularMoviesSlice.ts';
 import useGetPopularMovies from '../../hooks/useGetPopularMovies';
 import MovieInterface from '../../model';
 
@@ -6,8 +11,15 @@ import Movie from '../Movie/Movie';
 
 const PopularMovies = () => {
   const [page, setPage] = useState(1);
+  const dispatch = useDispatch();
 
+  // Old way to get the popular movies
   const [allMovies] = useGetPopularMovies(page);
+
+  const movies = useSelector(selectAllPopularMovies);
+  useEffect(() => {
+    dispatch(fetchAsyncPopularMovies());
+  }, [dispatch]);
 
   return (
     <React.Fragment>
@@ -33,7 +45,7 @@ const PopularMovies = () => {
             Siguiente
           </button>
         </div>
-        {allMovies.map((mov: MovieInterface, key: number) => {
+        {movies.map((mov: MovieInterface, key: number) => {
           return (
             <Movie
               key={key}
