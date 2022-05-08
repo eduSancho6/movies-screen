@@ -1,32 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { API_KEY, URL } from '../../api_key';
+import useGetPopularMovies from '../../hooks/useGetPopularMovies';
 import MovieInterface from '../../model';
 import { AllMovies } from '../../pages/SearchScreen';
 import Movie from '../Movie/Movie';
 
-const PopularMovies = ({ allMovies, setAllMovies }: AllMovies) => {
-  const [page, setPage] = useState<number>(1);
+const PopularMovies = () => {
+  const [page, setPage] = useState(1);
 
-  const getPopularMovies = async () => {
-    try {
-      const { data } = await axios.get(
-        `${URL}/movie/popular?api_key=${API_KEY}&language=es-ES&page=${page}`
-      );
-      setAllMovies(data.results);
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        console.error(error);
-      }
-    }
-  };
-  useEffect(() => {
-    getPopularMovies();
-  }, [page]);
-
-  useEffect(() => {
-    getPopularMovies();
-  }, []);
+  const [allMovies] = useGetPopularMovies(page);
 
   return (
     <React.Fragment>
