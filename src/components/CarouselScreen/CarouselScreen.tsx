@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import MovieInterface from '../../model';
 import './carouselScreen.css';
-import Carousel from './Carousel';
+
 import useGetTopRatedMovies from '../../hooks/useGetTopRatedMovies';
+import Carousel from '../Carousel/Carousel';
 export interface ICarousel {
   allMovies: MovieInterface[];
   children: string;
