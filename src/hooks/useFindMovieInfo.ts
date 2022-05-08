@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { API_KEY, URL } from '../api_key';
+import { API_KEY, URL } from '../api/api_key';
 
 const useFindMovieInfo = (id: number) => {
   const [movie, setMovie] = useState({

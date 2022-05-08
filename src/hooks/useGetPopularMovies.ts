@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { API_KEY, URL } from '../api_key';
+import { API_KEY, URL } from '../api/api_key';
 import MovieInterface from '../model';
 
 const useGetPopularMovies = (page: number) => {
