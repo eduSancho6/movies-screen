@@ -12,11 +12,14 @@ const Header = () => {
       </Link>
       <nav className='nav_container'>
         <ul className='nav_items'>
-          <Link to='/' className='nav_item'>
-            Inicio
-          </Link>
           <Link to='/favs' className='nav_item'>
             Mis favoritos
+          </Link>
+          <Link to='/popular' className='nav_item'>
+            Populares
+          </Link>
+          <Link to='/rated' className='nav_item'>
+            Mejor valoradas
           </Link>
         </ul>
       </nav>
