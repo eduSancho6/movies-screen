@@ -1,5 +1,6 @@
 import './searchEngine.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { useState } from 'react';
 interface searchInterface {
   search?: string;
@@ -12,6 +13,8 @@ const SearchEngine: React.FC<searchInterface> = ({
 }: searchInterface) => {
   const [search, setSearch] = useState<string>('');
 
+  const navigate = useNavigate();
+
   return (
     <section className='search-engine_container'>
       <h2 className='header_title'>
@@ -19,7 +22,13 @@ const SearchEngine: React.FC<searchInterface> = ({
         <span className='green'>¿</span> Qué vemos hoy{' '}
         <span className='green'>?</span>
       </h2>
-      <form className='search_form'>
+      <form
+        className='search_form'
+        onSubmit={(e) => {
+          e.preventDefault();
+          navigate(`/search/${search}`);
+        }}
+      >
         <input
           type='text'
           value={search}
