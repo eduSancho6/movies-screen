@@ -11,11 +11,13 @@ import Movie from '../Movie/Movie';
 
 const PopularMovies = () => {
   const [page, setPage] = useState(1);
-  const dispatch = useDispatch();
 
-  // Old way to get the popular movies
+  // Current way to get the popular movies
   const [allMovies] = useGetPopularMovies(page);
 
+  const dispatch = useDispatch();
+
+  // Para tener los botones funcionales estoy usando la anterior versión.
   const movies = useSelector(selectAllPopularMovies);
   useEffect(() => {
     dispatch(fetchAsyncPopularMovies());
@@ -45,7 +47,7 @@ const PopularMovies = () => {
             Siguiente
           </button>
         </div>
-        {movies.map((mov: MovieInterface, key: number) => {
+        {allMovies.map((mov: MovieInterface, key: number) => {
           return (
             <Movie
               key={key}
