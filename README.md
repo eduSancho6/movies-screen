@@ -23,13 +23,8 @@ Tras añadir esta información, solo será necesario iniciar el repositorio con 
 **npm start**
 
 
-La peticiones a su servidor se han realizado a través de **Axios**, una API HTTP de Javascript que permite realizar promesas y comunicarnos con API REST. Para más información pulsa [aquí](https://axios-http.com/docs/intro).
+La peticiones a su servidor se han realizado a través de **Axios**, una API HTTP de Javascript que permite realizar promesas y comunicarnos con API REST. Para más información pulsa [aquí](https://axios-http.com/docs/intro). Por otro lado, he utilizado **Redux** para la gestión del estado correspondiente a las películas favoritas.
 
 
-Por otro lado, he utilizado **Redux** para la gestión del estado correspondiente a las películas favoritas, para lo cuál he tenido que aprenderlo desde el principio. Esta parte ha sido bastante desafiante puesto que lo que aprendía o bien estaba "deprecado" o bien creía que necesitaba hacerlo de manera asíncrona y subí la dificultad sin venir a cuento. Ahora está implementado solo el Slice correspondiente a favoritos, pero a lo largo de estos días habrá tantos slices como estados globales que cambiar: la búsqueda, sus resultados, las películas más populares, ...etc. Gracias a esto, que aunque me haya costado una entrega retrasada y ha afectado al tiempo disponible para diseñar y realizar más implementaciones, ha servido mucho para una comprensión más profunda de Redux y lo que ocurre por detrás. 
 
-
-**EL GRAN BUG**
-
-En principio funciona bien si se añade y quita de favoritos cada película desde la pantalla principal, funciona correctamente y no da ningún tipo de fallo. El problema llega cuando queremos eliminar esa etiqueta desde la página de favoritos. En un primer momento parece que todo bien, pero si le dais a eliminar de favoritos, a la película que se encuentre justo a su derecha va a cambiar y a pasar a tener el icono de no favorito, el corazón vacío. Eso significará que cuando se pulse de nuevo, mandará otra vez la misma película a favoritos y se duplicará con el corazón relleno, por lo que si se volviese a pulsar, ya que ambos tienen el mismo id, se eliminarían las dos películas simultáneamente.
 
