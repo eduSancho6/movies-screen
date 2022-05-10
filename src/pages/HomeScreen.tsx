@@ -8,6 +8,10 @@ import {
   selectAllPopularMovies,
 } from '../features/allMovies/popularMoviesSlice.ts';
 import {
+  fetchAsyncNowPlayingMovies,
+  selectNowPlayingMovies,
+} from '../features/latestMovies/latestMoviesSlice';
+import {
   fetchAsyncTopRatedMovies,
   selectAllTopRatedMovies,
 } from '../features/topRated/topRatedMoviesSlice';
@@ -15,19 +19,21 @@ import {
 const HomeScreen = () => {
   const [indexPopular, setIndexPopular] = useState(0);
   const [indexRated, setIndexRated] = useState(0);
+  const [indexPlaying, setIndexPlaying] = useState(0);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchAsyncPopularMovies());
     dispatch(fetchAsyncTopRatedMovies());
-  }, []);
+    dispatch(fetchAsyncNowPlayingMovies());
+  }, [dispatch]);
 
   const popularMovies = useSelector(selectAllPopularMovies);
   const topRatedMovies = useSelector(selectAllTopRatedMovies);
+  const nowPlayingMovies = useSelector(selectNowPlayingMovies);
 
-  console.log('POPULAR', popularMovies);
-  console.log('TOP RATED', topRatedMovies);
+  console.log('LAtestMovies', nowPlayingMovies);
 
   return (
     <React.Fragment>
@@ -46,6 +52,13 @@ const HomeScreen = () => {
         setIndexMov={setIndexRated}
       >
         Las películas mejor valoradas
+      </Carousel>
+      <Carousel
+        allMovies={nowPlayingMovies}
+        indexMov={indexPlaying}
+        setIndexMov={setIndexPlaying}
+      >
+        Ahora en cines
       </Carousel>
     </React.Fragment>
   );

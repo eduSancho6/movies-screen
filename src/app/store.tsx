@@ -3,6 +3,7 @@ import favoriteMoviesReducer from '../features/favoriteMovies/favoriteMoviesSlic
 import popularMoviesReducer from '../features/allMovies/popularMoviesSlice.ts';
 import topRatedMoviesSlice from '../features/topRated/topRatedMoviesSlice';
 import upcomingMoviesSlice from '../features/upcomingMovies/upcomingMovies';
+import latestMoviesSlice from '../features/latestMovies/latestMoviesSlice';
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     popularMovies: popularMoviesReducer,
     topRatedMovies: topRatedMoviesSlice,
     upcomingMovies: upcomingMoviesSlice,
+    latestMovies: latestMoviesSlice,
   },
 });
