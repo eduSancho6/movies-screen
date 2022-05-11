@@ -1,0 +1,25 @@
+.carousel-screen_container {
+  position: relative;
+  display: flex;
+  max-width: 100vw;
+}
+
+.btn-arrow {
+  position: absolute;
+
+  height: 100%;
+  width: 3rem;
+  opacity: 0.3;
+  z-index: 100;
+}
+.btn-arrow:hover {
+  opacity: 1;
+}
+
+.btn-right {
+  right: 0;
+}
+.carousel_container {
+  display: flex;
+  transition: 0.5s;
+}

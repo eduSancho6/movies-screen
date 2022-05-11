@@ -1,6 +1,7 @@
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { ICarousel } from '../CarouselScreen/CarouselScreen';
 import Movie from '../Movie/Movie';
+import './carousel.css';
 
 const Carousel = ({
   children,
@@ -13,7 +14,7 @@ const Carousel = ({
       className='carousel-screen_container'
       style={{ marginTop: '7rem' }}
     >
-      <h2
+      <h4
         style={{
           position: 'absolute',
           top: '-2rem',
@@ -22,7 +23,7 @@ const Carousel = ({
         }}
       >
         {children}
-      </h2>
+      </h4>
       <button
         className='btn-arrow btn-left handle'
         onClick={() => setIndexMov(indexMov + 1)}
@@ -34,13 +35,14 @@ const Carousel = ({
         className='carousel_container'
         style={{ transform: `translateX(${indexMov * 10}%)` }}
       >
-        {allMovies.map((mov) => {
+        {allMovies.map((mov, index) => {
           return (
             <Movie
               id={mov.id}
               original_title={mov.original_title}
               poster_path={mov.poster_path}
               vote_average={mov.vote_average}
+              key={index}
             />
           );
         })}

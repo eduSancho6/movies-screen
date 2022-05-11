@@ -7,24 +7,16 @@ import { FaYoutube } from 'react-icons/fa';
 import useFindMovieInfo from '../../hooks/useFindMovieInfo';
 import axios from 'axios';
 import { API_KEY, URL } from '../../api/api_key';
-import MovieInterface from '../../model';
-import { url } from 'inspector';
+import '../CarouselScreen/carouselScreen.css';
+
 import urlApi from '../../api/urlApi';
-
-interface VideoInterface {
-  id: number;
-  key: string;
-  name: string;
-}
-
-type SwitchTrailer = {
-  switchTrailer: boolean;
-  setSwitchTrailer: React.Dispatch<React.SetStateAction<boolean>>;
-};
+import Carousel from '../Carousel/Carousel';
 
 const MovieInfoScreen = () => {
   const [video, setVideo] = useState<string>('9djAMds545g');
   const [switchTrailer, setSwitchTrailer] = useState(false);
+  const [indexSimilar, setIndexSimilar] = useState(0);
+  const [similarMovies, setSimilarMovies] = useState([]);
   const { id } = useParams();
 
   const idMovie = Number(id);
@@ -64,14 +56,20 @@ const MovieInfoScreen = () => {
     );
   };
 
-  const getSimilarMovies = async () => {
+  const getSimilarMovies = async (id: number) => {
     try {
-      const response = await urlApi.get(``);
+      const response = await urlApi.get(
+        `/movie/${idMovie}/similar?api_key=${API_KEY}&language=es-ES`
+      );
+      setSimilarMovies(response.data.results);
     } catch (error) {
       console.log('ERROR SIMILAR', error);
     }
   };
 
+  useEffect(() => {
+    getSimilarMovies(idMovie);
+  }, []);
   return (
     <section className='movie-info-screen_container'>
       {loading ? (
@@ -113,6 +111,13 @@ const MovieInfoScreen = () => {
               {switchTrailer ? <Trailer /> : ''}
             </div>
           </div>
+
+          <Carousel
+            allMovies={similarMovies}
+            indexMov={indexSimilar}
+            setIndexMov={setIndexSimilar}
+            children={`Películas similares a ${movie.original_title}`}
+          />
 
           {/* Meter géneros */}
         </React.Fragment>
