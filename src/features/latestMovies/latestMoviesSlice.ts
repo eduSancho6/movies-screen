@@ -7,7 +7,7 @@ export const fetchAsyncNowPlayingMovies: any = createAsyncThunk(
   'latestMovies/fetchAsyncLatestMovies',
   async () => {
     const response = await urlApi.get(
-      `3/movie/now_playing?api_key=${API_KEY}&language=es-ES`
+      `/movie/now_playing?api_key=${API_KEY}&language=es-ES`
     );
 
     return response.data.results;

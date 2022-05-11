@@ -6,7 +6,7 @@ export const fetchAsyncTopRatedMovies: any = createAsyncThunk(
   'topRatedMovies/fetchAsyncTopRatedMovies',
   async () => {
     const response = await urlApi.get(
-      `3/movie/top_rated?api_key=${API_KEY}&language=es-ES`
+      `/movie/top_rated?api_key=${API_KEY}&language=es-ES`
     );
     return response.data.results;
   }

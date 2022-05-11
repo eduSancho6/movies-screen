@@ -9,7 +9,7 @@ const initialState: any = {
 export const fetchAsyncPopularMovies: any = createAsyncThunk(
   'allMovies/fetchAsyncMovies',
   async () => {
-    const response = await urlApi.get(`3/movie/popular?api_key=${API_KEY}`);
+    const response = await urlApi.get(`/movie/popular?api_key=${API_KEY}`);
     return response.data.results;
   }
 );

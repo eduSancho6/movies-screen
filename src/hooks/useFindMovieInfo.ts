@@ -9,6 +9,7 @@ const useFindMovieInfo = (id: number) => {
     overview: 'Please, Wait until the movie is completely upload',
     vote_average: 10,
     release_date: '2022-02-22',
+    key: '',
   });
   const [loading, setLoading] = useState(true);
 
@@ -23,6 +24,7 @@ const useFindMovieInfo = (id: number) => {
         },
       });
       setMovie(res.data);
+      // console.log('movie', res.data);
       setLoading(false);
     } catch (error) {
       console.error(error);

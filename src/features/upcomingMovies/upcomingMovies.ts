@@ -6,7 +6,7 @@ export const fetchAsyncUpcomingMovies: any = createAsyncThunk(
   'upcomingMovies/fetchAsyncUpcomingMovies',
   async () => {
     const response = await urlApi.get(
-      `3/movie/upcoming?api_key=${API_KEY}&language=es-ES`
+      `/movie/upcoming?api_key=${API_KEY}&language=es-ES`
     );
     return response.data.results;
   }
