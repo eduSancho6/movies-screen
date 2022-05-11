@@ -29,7 +29,7 @@ const Carousel = ({
         onClick={() => setIndexMov(indexMov + 1)}
         disabled={indexMov === 0}
       >
-        <FaChevronLeft />
+        <FaChevronLeft className='arrow_icon' />
       </button>
       <div
         className='carousel_container'
@@ -53,7 +53,7 @@ const Carousel = ({
         onClick={() => setIndexMov(indexMov - 1)}
         disabled={indexMov === -9}
       >
-        <FaChevronRight />
+        <FaChevronRight className='arrow_icon' />
       </button>
     </section>
   );

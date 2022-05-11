@@ -7,13 +7,21 @@
 .btn-arrow {
   position: absolute;
 
+  border: none;
+
   height: 100%;
   width: 3rem;
   opacity: 0.3;
   z-index: 100;
 }
 .btn-arrow:hover {
-  opacity: 1;
+  opacity: 0.8;
+  background-color: rgb(19, 5, 5);
+}
+.btn-arrow:hover .arrow_icon {
+  color: red;
+  font-size: 2rem;
+  transition: 0.5s;
 }
 
 .btn-right {
