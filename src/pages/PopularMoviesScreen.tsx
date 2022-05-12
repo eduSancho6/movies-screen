@@ -11,35 +11,9 @@ export type AllMovies = {
 };
 
 const PopularMoviesScreen = () => {
-  const [search, setSearch] = useState<string>('');
-  const [allMovies, setAllMovies] = useState<MovieInterface[]>([]);
-
-  const searchMovie = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const controller = new AbortController();
-
-    try {
-      const { data } = await axios.get(
-        `${URL}/search/movie?api_key=${API_KEY}&query=${search}`
-      );
-      setAllMovies(data.results);
-      console.log('Info', data.results);
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        console.error(error);
-      }
-    }
-    controller.abort();
-  };
-
   return (
     <React.Fragment>
-      <SearchEngine
-        search={search}
-        setSearch={setSearch}
-        searchMovie={searchMovie}
-      />
+      <SearchEngine />
       <PopularMovies />
     </React.Fragment>
   );
