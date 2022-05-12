@@ -117,6 +117,7 @@ const MovieInfoScreen = () => {
             indexMov={indexSimilar}
             setIndexMov={setIndexSimilar}
             children={`Películas similares a ${movie.original_title}`}
+            link={`/movies/similar-to/${idMovie}`}
           />
 
           {/* Meter géneros */}

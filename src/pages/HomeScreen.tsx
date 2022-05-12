@@ -33,32 +33,35 @@ const HomeScreen = () => {
   const topRatedMovies = useSelector(selectAllTopRatedMovies);
   const nowPlayingMovies = useSelector(selectNowPlayingMovies);
 
-  console.log('LAtestMovies', nowPlayingMovies);
+  const linkPopulars = '/popular';
+  const linkRated = '/rated';
 
   return (
     <React.Fragment>
       <SearchEngine />
 
       <Carousel
-        allMovies={popularMovies}
-        indexMov={indexPopular}
-        setIndexMov={setIndexPopular}
+        allMovies={nowPlayingMovies}
+        indexMov={indexPlaying}
+        setIndexMov={setIndexPlaying}
       >
-        Las películas más populares
+        En tu cine más cercano
       </Carousel>
       <Carousel
         allMovies={topRatedMovies}
         indexMov={indexRated}
         setIndexMov={setIndexRated}
+        link={linkRated}
       >
         Las películas mejor valoradas
       </Carousel>
       <Carousel
-        allMovies={nowPlayingMovies}
-        indexMov={indexPlaying}
-        setIndexMov={setIndexPlaying}
+        allMovies={popularMovies}
+        indexMov={indexPopular}
+        setIndexMov={setIndexPopular}
+        link={linkPopulars}
       >
-        Ahora en cines
+        Las películas más populares
       </Carousel>
     </React.Fragment>
   );
