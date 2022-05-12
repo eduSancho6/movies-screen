@@ -1,4 +1,5 @@
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
 import { ICarousel } from '../CarouselScreen/CarouselScreen';
 import Movie from '../Movie/Movie';
 import './carousel.css';
@@ -8,7 +9,9 @@ const Carousel = ({
   allMovies,
   indexMov,
   setIndexMov,
+  link,
 }: ICarousel) => {
+  const navigate = useNavigate();
   return (
     <section
       className='carousel-screen_container'
@@ -23,6 +26,14 @@ const Carousel = ({
         }}
       >
         {children}
+
+        {link && (
+          // <Link to={`${link}`} className='ver-todas_link'>
+          <span className='ver-todas_link' onClick={() => navigate(link)}>
+            <span className='red_hover'>+</span> Ver todas
+          </span>
+          // </Link>
+        )}
       </h4>
       <button
         className='btn-arrow btn-left handle'

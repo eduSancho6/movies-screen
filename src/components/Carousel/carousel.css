@@ -7,9 +7,14 @@
 .btn-arrow {
   position: absolute;
 
+  /* Center button vertically */
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: 20%;
+
   border: none;
 
-  height: 100%;
   width: 3rem;
   opacity: 0.3;
   z-index: 100;
@@ -23,6 +28,10 @@
   font-size: 2rem;
   transition: 0.5s;
 }
+.btn-arrow:active .arrow_icon {
+  font-size: 0.7rem;
+  transition: 0.1s;
+}
 
 .btn-right {
   right: 0;
@@ -30,4 +39,33 @@
 .carousel_container {
   display: flex;
   transition: 0.5s;
+}
+
+.ver-todas_link {
+  position: relative;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+.ver-todas_link::after {
+  content: '';
+  position: absolute;
+
+  height: 2px;
+  width: 0%;
+
+  bottom: -0.5rem;
+  left: 1rem;
+
+  background-color: red;
+
+  border-radius: 50%;
+}
+
+.ver-todas_link:hover::after {
+  width: 70%;
+  transition: all ease 0.5s;
+}
+
+.ver-todas_link:hover .red_hover {
+  color: red;
 }

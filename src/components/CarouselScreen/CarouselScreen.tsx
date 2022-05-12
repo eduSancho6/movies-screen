@@ -9,6 +9,7 @@ export interface ICarousel {
   children: string;
   indexMov: number;
   setIndexMov: React.Dispatch<React.SetStateAction<number>>;
+  link?: string;
 }
 
 const CarouselScreen = () => {
