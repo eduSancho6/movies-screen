@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MovieInterface from '../model';
-import axios from 'axios';
 import SearchEngine from '../components/SearchEngine/SearchEngine';
-import { API_KEY, URL } from '../api/api_key';
 import PopularMovies from '../components/PopularMovies/PopularMovies';
 
 export type AllMovies = {
