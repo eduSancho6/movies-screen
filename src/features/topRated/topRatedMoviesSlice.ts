@@ -4,9 +4,9 @@ import urlApi from '../../api/urlApi';
 
 export const fetchAsyncTopRatedMovies: any = createAsyncThunk(
   'topRatedMovies/fetchAsyncTopRatedMovies',
-  async () => {
+  async (page: number) => {
     const response = await urlApi.get(
-      `/movie/top_rated?api_key=${API_KEY}&language=es-ES`
+      `/movie/top_rated?api_key=${API_KEY}&language=es-ES&page=${page}`
     );
     return response.data.results;
   }
