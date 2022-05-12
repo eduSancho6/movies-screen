@@ -2,14 +2,14 @@ import SearchScreen from '../pages/SearchScreen';
 import MovieInfoScreen from '../components/MovieInfoScreen/MovieInfoScreen';
 import FavoriteScreen from '../pages/FavoriteScreen';
 import PopularMoviesScreen from '../pages/PopularMoviesScreen';
-import CarouselScreen from '../components/CarouselScreen/CarouselScreen';
 import HomeScreen from '../pages/HomeScreen';
 import SimilarMoviesScreen from '../pages/SimilarMoviesScreen/SimilarMoviesScreen';
+import TopRatedMoviesScreen from '../pages/TopRatedMoviesScreen';
 
 const routes = [
   { name: 'home', path: '/', component: <HomeScreen /> },
   { name: 'popular', path: '/popular', component: <PopularMoviesScreen /> },
-  { name: 'carousel', path: '/rated', component: <CarouselScreen /> },
+  { name: 'topRated', path: '/rated', component: <TopRatedMoviesScreen /> },
   {
     name: 'similar',
     path: '/movies/similar-to/:idMovie',
