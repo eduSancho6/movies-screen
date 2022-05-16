@@ -12,6 +12,9 @@ import Movie from '../Movie/Movie';
 const PopularMovies = () => {
   const [page, setPage] = useState(1);
 
+let prueba;
+
+
   // Current way to get the popular movies
   const [allMovies] = useGetPopularMovies(page);
 
