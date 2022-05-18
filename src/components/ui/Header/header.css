@@ -6,6 +6,7 @@
 }
 
 .header_container {
+  padding: 0 1rem;
   display: flex;
   margin-bottom: 2rem;
   max-width: 1100px;
