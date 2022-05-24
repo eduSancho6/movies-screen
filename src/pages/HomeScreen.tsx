@@ -76,7 +76,7 @@ const HomeScreen = () => {
 
         <article className="upcoming-movie_container" >
           <div className="buttons-hero_container">
-              <button disabled={} onClick={() => {
+              <button disabled={counter === 0} onClick={() => {
                 setCounter(counter - 1)
               }} className="btn-arrow arrow-left"> <AiOutlineArrowLeft className="icon-arrow"/> </button>
               <button onClick={() => {
