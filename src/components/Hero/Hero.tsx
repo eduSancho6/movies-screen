@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 import MovieInterface from '../../model'
-import './hero.className'
+import './hero.css'
 
 type IListOfMovies = {
     listOfMovies: MovieInterface[]
