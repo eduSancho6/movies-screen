@@ -12,15 +12,7 @@ type IListOfMovies = {
 const Hero = ({listOfMovies}:IListOfMovies) => {
     const [counter, setCounter] = useState(0);
   
-  /*   setInterval(() => {
-      if(counter !== 19) {
-  
-        setCounter(counter + 1)
-      } else {
-        setCounter(0)
-      }
-    },3500) */
-  
+    
       return (
         <section className="hero-movies_container">
           <div className="title-hero_container">
