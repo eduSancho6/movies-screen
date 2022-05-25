@@ -1,7 +1,7 @@
 /* 
-###################
-## HERO TEMPORAL ##
-###################
+##########
+## HERO ##
+##########
 */
 
 .hero-movies_container {
@@ -9,7 +9,7 @@
 
   display: flex;
   justify-content: center;
-  padding: 2rem 1rem 0;
+  padding: 0 1rem 0;
 
   background: #000;
 }
@@ -36,8 +36,22 @@
 .title-hero_container {
   position: absolute;
   top: 0;
-  padding: 1rem;
+  left: 0;
+
+  padding: 0.4rem;
+
   background: #111;
+
+  border-radius: 4px;
+}
+.name-hero_container {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  padding: 0.4rem;
+
+  background: #111;
+
   border-radius: 4px;
 }
 

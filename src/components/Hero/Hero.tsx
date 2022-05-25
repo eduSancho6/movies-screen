@@ -24,6 +24,9 @@ const Hero = ({listOfMovies}:IListOfMovies) => {
           <div className="title-hero_container">
             <h2 className="title-hero">Próximamente en los <span className="underline-red">mejores</span>  cines...</h2>
           </div>
+          <div className="name-hero_container">
+            <h2 className="title-hero"> {listOfMovies[counter].original_title}</h2>
+          </div>
   
           <article className="upcoming-movie_container" >
             <div className="buttons-hero_container">
